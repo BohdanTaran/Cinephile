@@ -1,0 +1,13 @@
+.categories {
+  @apply flex items-center
+  xs:overflow-x-auto justify-start whitespace-nowrap ml-1 mr-1  
+	md:justify-center;
+}
+
+.ul {
+  @apply flex gap-10;
+}
+
+.li {
+  @apply hover:text-cp-1 ease-in-out duration-200;
+}

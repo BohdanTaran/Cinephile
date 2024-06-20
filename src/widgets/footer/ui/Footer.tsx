@@ -1,4 +1,4 @@
-import logo from '../../../../public/icons/logo.png';
+import { Logo } from '../../../shared/ui/Logo';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
@@ -6,9 +6,7 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
         <div className={styles.wrapper_items}>
-          <a href="#">
-            <img src={logo} alt="logo" />
-          </a>
+          <Logo />
           <h1>Social Links:</h1>
         </div>
       </div>
