@@ -1,4 +1,6 @@
-import logo from '../../../../public/icons/logo.png';
+import { Button } from '../../../shared/ui/Button';
+import { Logo } from '../../../shared/ui/Logo';
+import { Navbar } from '../../Navbar/ui/Navbar';
 import styles from './Header.module.css';
 
 export const Header = () => {
@@ -7,29 +9,12 @@ export const Header = () => {
       <div className={styles.wrapper}>
         <div className={styles.wrapper_items}>
           <div className={styles.helpers}>
-            <a href="#">
-              <img src={logo} alt="logo" />
-            </a>
+            <Logo />
             <div>
-              <button className={styles.auth_btn}>Login</button>
+              <Button style="primary">Login</Button>
             </div>
           </div>
-          <div className={styles.categories}>
-            <ul className={styles.ul}>
-              <li className={styles.li}>
-                <a href="">Now Playing</a>
-              </li>
-              <li className={styles.li}>
-                <a href="">Popular</a>
-              </li>
-              <li className={styles.li}>
-                <a href="">Top Rated</a>
-              </li>
-              <li className={styles.li}>
-                <a href="">Upcoming</a>
-              </li>
-            </ul>
-          </div>
+          <Navbar />
         </div>
       </div>
     </header>
