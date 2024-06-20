@@ -13,20 +13,3 @@
 .helpers {
   @apply w-full flex justify-between items-center mt-4;
 }
-
-.categories {
-  @apply flex items-center
-  xs:overflow-x-auto justify-start whitespace-nowrap ml-1 mr-1 md:justify-center;
-}
-
-.ul {
-  @apply flex gap-10;
-}
-
-.li {
-  @apply hover:text-cp-1 ease-in-out duration-200;
-}
-
-.auth_btn {
-  @apply xs:mr-1 py-1 px-10 bg-cp-1 text-cp-2 rounded shadow-[0_1px_10px_rgb(255,177,122,_0.7)] hover:bg-orange-300 ease-in-out duration-200;
-}
