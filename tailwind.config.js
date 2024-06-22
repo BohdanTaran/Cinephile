@@ -12,6 +12,10 @@ export default {
       screens: {
         xs: '320px',
       },
+      fontFamily: {
+        fira: ['"Fira Sans"', 'sans-serif'],
+        roboto: ['"Roboto"', 'sans-serif'],
+      },
     },
   },
   plugins: [],
