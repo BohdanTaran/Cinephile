@@ -1,28 +1,17 @@
-import { useEffect, useState } from 'react';
-import { getNowPlayingFilms } from '../../../entities/films';
+import { useFilms } from '../../../entities/films/lib/hooks/useFilms';
+import { useGenres } from '../../../shared/ui/Genres/lib/hooks/useGenres';
 import { FilmsList } from '../../../widgets/FilmsList';
 import styles from './NowPlaying.module.css';
 
 export const NowPlaying: React.FC = () => {
-  const [films, setFilms] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const loadFilms = async () => {
-      const films = await getNowPlayingFilms();
-      console.log(films);
-      setFilms(films);
-    };
-
-    loadFilms();
-  }, []);
+  const films = useFilms();
+  const genres = useGenres();
 
   return (
     <div className={styles.content}>
       <div className={styles.wrapper}>
         <div className={styles.wrapper_films}>
-          <FilmsList films={films} />
+          <FilmsList films={films} genres={genres} />
         </div>
       </div>
     </div>

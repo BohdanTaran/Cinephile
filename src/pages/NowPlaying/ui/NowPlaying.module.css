@@ -3,14 +3,27 @@
 }
 
 .wrapper {
-  @apply bg-cp-3
-        xs:w-full flex justify-center
-        xl:w-10/12
+  @apply bg-cp-3 grid place-items-center
+        xs:w-full
+        xl:w-8/12
         2xl:w-8/12;
 }
 
 .wrapper_films {
-  @apply sm:flex flex-wrap ml-2
-          lg:w-4/5
-          xl:w-full;
+  @apply grid
+        sm:grid-cols-2 w-11/12 gap-x-5
+        lg:grid-cols-4
+        2xl:grid-cols-6;
+}
+
+@media (min-width: 1024px) {
+  .wrapper_films {
+    @apply w-4/6;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrapper_films {
+    @apply w-11/12;
+  }
 }
