@@ -1,0 +1,20 @@
+.poster {
+  @apply flex text-white
+          xs:w-full mt-4
+          sm:w-1/2
+          lg:w-1/6;
+}
+
+.img {
+  @apply xs:w-40 rounded-lg mb-1 ml-1;
+}
+
+.title {
+  @apply w-10/12 ml-2;
+}
+
+@media (min-width: 1024px) {
+  .poster {
+    @apply flex-col;
+  }
+}
