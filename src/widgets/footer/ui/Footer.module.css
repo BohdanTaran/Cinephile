@@ -1,5 +1,5 @@
 .footer {
-  @apply fixed bottom-0 w-full bg-cp-2 h-28 text-cp-5 font-medium;
+  @apply bottom-0 w-full bg-cp-2 h-28 text-cp-5 font-medium;
 }
 
 .wrapper {
@@ -7,5 +7,7 @@
 }
 
 .wrapper_items {
-  @apply lg:w-1/2 h-full flex justify-between items-center md:w-10/12;
+  @apply sm:w-full ml-2 mr-2
+        lg:w-4/5 h-full flex justify-between items-center
+        xl:w-4/6;
 }
