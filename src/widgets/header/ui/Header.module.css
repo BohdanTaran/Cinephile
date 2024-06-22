@@ -1,5 +1,5 @@
 .header {
-  @apply bg-cp-2 h-24 text-cp-5 font-medium;
+  @apply bg-cp-2 h-24 text-cp-5 font-medium font-roboto;
 }
 
 .wrapper {
@@ -7,9 +7,10 @@
 }
 
 .wrapper_items {
-  @apply lg:w-4/5 h-full grid grid-rows-2
-          sm:w-full ml-2 mr-2
-          xl:w-4/6;
+  @apply xs:w-11/12
+          lg:w-4/6 h-full grid grid-rows-2
+          xl:w-8/12
+          2xl:w-8/12;
 }
 
 .helpers {
