@@ -1,0 +1,16 @@
+.content {
+  @apply flex justify-center font-medium;
+}
+
+.wrapper {
+  @apply bg-cp-3
+        xs:w-full flex justify-center
+        xl:w-10/12
+        2xl:w-8/12;
+}
+
+.wrapper_films {
+  @apply sm:flex flex-wrap ml-2
+          lg:w-4/5
+          xl:w-full;
+}
