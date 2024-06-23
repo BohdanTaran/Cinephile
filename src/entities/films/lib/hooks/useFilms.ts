@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react';
 import { getNowPlayingFilms } from '../../api/filmsApi';
 
-export const useFilms = () => {
+export const useFilms = (currentPage: number) => {
   const [films, setFilms] = useState([]);
 
-  useEffect(() => {
-    const loadFilms = async () => {
-      const films = await getNowPlayingFilms();
-      setFilms(films);
-    };
+  const loadFilms = async (currentPage: number) => {
+    const films = await getNowPlayingFilms(currentPage);
+    setFilms(films);
+  };
 
-    loadFilms();
-  }, []);
+  useEffect(() => {
+    loadFilms(currentPage);
+  }, [currentPage]);
+
+  console.log('fv', films);
 
   return films;
 };
