@@ -15,3 +15,8 @@ export interface IFilm {
   vote_average: number;
   vote_count: number;
 }
+
+export interface FilmDataResponse {
+  results: IFilm[];
+  total_pages: number;
+}

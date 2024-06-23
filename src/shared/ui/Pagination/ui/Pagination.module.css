@@ -20,5 +20,9 @@
 }
 
 .arrow {
-  @apply text-white w-8 bg-cp-1 border-none rounded-md cursor-pointer;
+  @apply text-cp-2 w-8 bg-cp-1 border-none rounded-md cursor-pointer;
+}
+
+.arrow:disabled {
+  @apply bg-cp-3;
 }
