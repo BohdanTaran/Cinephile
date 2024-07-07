@@ -2,33 +2,27 @@ import { useState } from 'react';
 import { useFilms } from '../../../entities/films/lib/hooks/useFilms';
 import { useGenres } from '../../../shared/ui/Genres/lib/hooks/useGenres';
 import { Pagination } from '../../../shared/ui/Pagination';
+import { usePagination } from '../../../shared/ui/Pagination/lib/hooks/usePagination';
 import { FilmsList } from '../../../widgets/FilmsList';
 import styles from './NowPlaying.module.css';
 
 export const NowPlaying: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const films = useFilms(currentPage);
+  const [filters, setFilters] = useState({ page: 1 });
+  const films = useFilms(filters.page);
   const genres = useGenres();
   const totalPages = films.total_pages;
 
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-      window.scrollTo(0, 0);
-    }
+  const changeFilter = (key: string, value: unknown) => {
+    setFilters((prev) => {
+      return { ...prev, [key]: value };
+    });
   };
 
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-      window.scrollTo(0, 0);
-    }
-  };
-
-  const handlePageClick = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo(0, 0);
-  };
+  const { handleNextPage, handlePrevPage, handlePageClick } = usePagination(
+    filters,
+    totalPages,
+    changeFilter,
+  );
 
   return (
     <div className={styles.content}>
@@ -41,7 +35,7 @@ export const NowPlaying: React.FC = () => {
           handlePrevPage={handlePrevPage}
           handlePageClick={handlePageClick}
           total_pages={totalPages}
-          currentPage={currentPage}
+          currentPage={filters.page}
         />
       </div>
     </div>

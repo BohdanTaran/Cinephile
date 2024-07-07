@@ -4,13 +4,9 @@
           lg:mb-4;
 }
 
-.img {
-  @apply xs:w-40 rounded-lg mb-1;
-}
-
 .filmCard_description {
   @apply xs:ml-1 w-full
-          lg:w-full
+          lg:ml-0 w-full
           xl:w-11/12;
 }
 
