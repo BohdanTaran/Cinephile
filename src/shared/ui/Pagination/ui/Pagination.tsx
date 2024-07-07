@@ -1,15 +1,14 @@
 import { getVisiblePages } from '../helpers/getVisiblePages';
+import { IPaginationProps } from '../model/types';
 import styles from './Pagination.module.css';
 
-interface Props {
-  total_pages: number;
-  currentPage: number;
-  handleNextPage: () => void;
-  handlePrevPage: () => void;
-  handlePageClick: (page: number) => void;
-}
-
-export const Pagination = ({ total_pages, currentPage, handleNextPage, handlePrevPage, handlePageClick }: Props) => {
+export const Pagination = ({
+  total_pages,
+  currentPage,
+  handleNextPage,
+  handlePrevPage,
+  handlePageClick,
+}: IPaginationProps) => {
   const pages = getVisiblePages(currentPage, total_pages);
 
   return (
@@ -33,7 +32,11 @@ export const Pagination = ({ total_pages, currentPage, handleNextPage, handlePre
           );
         })}
       </div>
-      <button disabled={currentPage >= total_pages} onClick={handleNextPage} className={styles.arrow}>
+      <button
+        disabled={currentPage >= total_pages}
+        onClick={handleNextPage}
+        className={styles.arrow}
+      >
         {'>'}
       </button>
     </div>

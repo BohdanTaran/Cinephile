@@ -1,5 +1,5 @@
 export const getVisiblePages = (currentPage: number, total_pages: number) => {
-  const visiblePages = 10;
+  const visiblePages = 7;
   let startPage = Math.max(1, currentPage - Math.floor(visiblePages / 2));
   let endPage = startPage + visiblePages - 1;
 

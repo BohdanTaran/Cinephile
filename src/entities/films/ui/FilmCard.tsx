@@ -1,6 +1,7 @@
 import { AdultWarning } from '../../../shared/ui/AdultWarning';
 import { IGenre } from '../../../shared/ui/Genres/model/types';
 import { Genres } from '../../../shared/ui/Genres/ui/Genres';
+import { Poster } from '../../../shared/ui/Poster';
 import { IFilm } from '../model/types';
 import styles from './FilmCard.module.css';
 
@@ -9,18 +10,16 @@ interface Props {
   genres: IGenre[];
 }
 
-const BASE_IMAGE_URL = import.meta.env.VITE_BASE_IMAGE_URL;
-
 export const FilmCard = ({ film, genres }: Props) => {
   return (
     <div className={styles.poster}>
-      <img className={styles.img} src={`${BASE_IMAGE_URL}${film.poster_path}`} alt={film.title} />
+      <Poster path={film.poster_path} />
       <div className={styles.filmCard_description}>
+        <span className={styles.title}>{film.original_title}</span>
         <div className={styles.sub_title}>
           {film.adult && <AdultWarning />}
           <Genres genres={genres} film={film} />
         </div>
-        <span className={styles.title}>{film.original_title}</span>
       </div>
     </div>
   );

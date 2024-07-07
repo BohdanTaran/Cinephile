@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'cp-1': 'rgb(255, 177, 122)',
+        'cp-1': '#ffb17a',
         'cp-2': '#2d3250',
         'cp-3': '#424769',
         'cp-4': '#676F8D',
