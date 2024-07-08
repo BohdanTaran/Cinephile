@@ -17,6 +17,6 @@ export interface IFilm {
 }
 
 export interface FilmDataResponse {
-  results: IFilm[];
-  total_pages: number;
+  films: IFilm[];
+  totalPages: number;
 }

@@ -16,5 +16,5 @@ export const useFilms = (currentPage: number): FilmDataResponse => {
     loadFilms(currentPage);
   }, [currentPage]);
 
-  return { results: films, total_pages: totalPages };
+  return { films: films, totalPages: totalPages };
 };
