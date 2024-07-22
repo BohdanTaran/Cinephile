@@ -5,7 +5,6 @@ import { useGenres } from '../../../shared/ui/Genres/lib/hooks/useGenres';
 import { Pagination } from '../../../shared/ui/Pagination';
 import { usePagination } from '../../../shared/ui/Pagination/lib/hooks/usePagination';
 import { FilmsList } from '../../../widgets/FilmsList';
-import styles from './NowPlaying.module.css';
 
 export const NowPlaying: React.FC = () => {
   const [filters, setFilters] = useState({ page: 1 });
@@ -18,17 +17,24 @@ export const NowPlaying: React.FC = () => {
     });
   };
 
-  const { handleNextPage, handlePrevPage, handlePageClick } = usePagination(
-    filters,
-    totalPages,
-    changeFilter,
-  );
+  const { handleNextPage, handlePrevPage, handlePageClick } = usePagination(filters, totalPages, changeFilter);
 
   return (
     <GenresContext.Provider value={genres}>
-      <div className={styles.content}>
-        <div className={styles.wrapper}>
-          <div className={styles.wrapper_films}>
+      <div className="flex justify-center font-medium">
+        <div
+          className="bg-cp-3 grid place-items-center
+        xs:w-full
+        xl:w-8/12
+        2xl:w-8/12"
+        >
+          <div
+            className="grid
+        sm:grid-cols-2 w-11/12 gap-x-5
+        lg:grid-cols-4 lg:w-4/6
+        xl:w-11/12
+        2xl:grid-cols-6"
+          >
             <FilmsList films={films} />
           </div>
           <Pagination
